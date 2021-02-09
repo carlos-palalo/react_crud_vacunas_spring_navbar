@@ -53,7 +53,7 @@ function CRUD() {
     await axios.get(baseUrl)
       .then(response => {
         setData(response.data);
-        //console.log(response.data);
+        console.log(response.data);
       }).catch(error => {
         console.log(error);
       })
@@ -157,7 +157,7 @@ function CRUD() {
           </tr>
         </thead>
         <tbody>
-          {console.log(data[0])}
+          {/*console.log(data[0])*/}
           {data.map(framework => (
             <tr key={framework.id}>
               {/*console.log(framework.first_name)*/}
@@ -178,7 +178,7 @@ function CRUD() {
               <td>{framework.dosis_Administradas}</td>
               <td>{framework.pauta_Completa}</td>
               <td>{framework.fecha_Ult_Vacuna}</td>
-              {console.log(framework)}
+              {/*console.log(framework)*/}
               <td>
                 <button className="btn btn-primary" onClick={() => seleccionarFramework(framework, "Editar")}>Editar</button>
                 <button className="btn btn-danger" onClick={() => seleccionarFramework(framework, "Eliminar")}>Eliminar</button>
