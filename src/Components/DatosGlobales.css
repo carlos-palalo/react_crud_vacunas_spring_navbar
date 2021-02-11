@@ -1,0 +1,29 @@
+.global {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.global > div {
+    /*margin: auto 0;*/
+    margin: 0px 20px;
+    padding: 40px;
+    height: 200px;
+    box-shadow: 0px 0px 16px 0px rgb(85, 199, 85);
+}
+
+.font-size-xx-large{
+    font-size: 36px;
+}
+
+.font-size-large{
+    font-size: 26px;
+}
+
+.font-size-medium{
+    font-size: 20px;
+}
+
+.border-bottom{
+    padding-bottom: 15px;
+}
