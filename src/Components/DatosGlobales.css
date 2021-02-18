@@ -8,22 +8,50 @@
     /*margin: auto 0;*/
     margin: 0px 20px;
     padding: 40px;
-    height: 200px;
-    box-shadow: 0px 0px 16px 0px rgb(85, 199, 85);
+    box-shadow: 0px 0px 16px 0px #80d0c7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.font-size-xx-large{
+.font-size-xx-large {
+    font-size: 46px;
+}
+
+.font-size-large {
     font-size: 36px;
 }
 
-.font-size-large{
-    font-size: 26px;
+.font-size-medium {
+    font-size: 30px;
 }
 
-.font-size-medium{
-    font-size: 20px;
-}
-
-.border-bottom{
+.border-bottom {
     padding-bottom: 15px;
+}
+
+.bg-custom-1 {
+    background-image: linear-gradient(90deg, #13547a 0%, #43c6ca 100%);
+}
+
+.bg-custom-2 {
+    background-image: linear-gradient(90deg, #096339 0%, #53ca43 100%);
+}
+
+.App h1{
+    font-size: 55px;
+    margin-top: 50px;
+}
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: #120fc4;
+  
+  /* Create the gradient. */
+  background-image: linear-gradient(45deg, #120fc4 0%, #7dc976 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
