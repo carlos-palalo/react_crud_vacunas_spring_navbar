@@ -1,5 +1,5 @@
 
-//npm i bootstrap reactstrap axios sweetalert
+//npm i bootstrap reactstrap axios sweetalert react-bootstrap-icons
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';

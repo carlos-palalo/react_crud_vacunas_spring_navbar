@@ -1,6 +1,6 @@
 .bg-custom {
     background-image: linear-gradient(90deg, #090d1f 0%, #18418d 100%);
-
+    box-shadow: 0 0 15px 0 #18418d;
     padding: 15px 40px;
 }
 

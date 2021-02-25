@@ -1,0 +1,15 @@
+footer div{
+    border-top: 1px solid gainsboro;
+    padding: 30px;
+    font-style: italic;
+    margin: 0 auto;
+    width: 50%;
+    color: gray;
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 800px){
+    footer div{
+        width: 100%;
+    }
+}

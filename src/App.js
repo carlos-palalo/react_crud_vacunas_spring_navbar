@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import DatosGlobales from "./Components/DatosGlobales";
 import MoreDeets from "./Components/MoreDeets";
 import NavBar from "./Components/Navbar"
+import "./assets/css/footer.css";
 import {
   Redirect,
   BrowserRouter as Router,
@@ -24,6 +25,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+        <Route path="/" exact>
+            <Home />
+          </Route>
           <Route path="/Home" component={Home}>
             <Home />
           </Route>
@@ -41,6 +45,9 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <footer>
+        <div>&copy; Carlos Palacios Alonso - 2º DAW</div>
+      </footer>
     </div>
   );
 }
