@@ -1,3 +1,4 @@
+//npm i bootstrap reactstrap axios sweetalert react-bootstrap-icons
 import React from 'react';
 //para trabajar con imagenes
 //primero la tengo que importar de dnde esta

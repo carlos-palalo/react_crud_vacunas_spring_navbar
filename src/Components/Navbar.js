@@ -1,3 +1,4 @@
+//npm i bootstrap reactstrap axios sweetalert react-bootstrap-icons
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import { HouseFill } from 'react-bootstrap-icons';
