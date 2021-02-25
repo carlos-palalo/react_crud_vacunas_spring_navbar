@@ -18,18 +18,16 @@ import {
 function App() {
   return (
     <div className="App">
-        <Router>
+      <Router>
         <NavBar />
- 
-
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-        <Route path="/Home" component={Home}>
-              <Home />
+          <Route path="/Home" component={Home}>
+            <Home />
           </Route>
           <Route path="/CRUD" component={CRUD}>
-              <CRUD />
+            <CRUD />
           </Route>
           <Route path="/DatosGlobales" component={DatosGlobales}>
             <DatosGlobales />
@@ -41,7 +39,7 @@ function App() {
             <DankMemes />
           </Route>
         </Switch>
-    </Router>
+      </Router>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.custom{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.table td{
+    vertical-align: middle;
+}
+
+.table tbody tr{
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:hover{
+    background-color: #d5eaeb;
+}

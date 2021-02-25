@@ -4,10 +4,13 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import {PencilFill, TrashFill} from 'react-bootstrap-icons';
 import axios from 'axios';
 //libreria para mejorar los alert   https://sweetalert.js.org/guides/
 //npm install sweetalert --save
 import swal from 'sweetalert';
+import './CRUD.css';
+
 function CRUD() {
   //direccion de la API
   const baseUrl = "http://localhost:5000/vacunas/";
@@ -20,9 +23,9 @@ function CRUD() {
     comunidad: '',
     pzifer: '',
     moderna: '',
-    dosis_Administradas: '',
-    pauta_Completa: '',
-    fecha_Ult_Vacuna: ''
+    dosisAdministradas: '',
+    pautaCompleta: '',
+    fechaUltVacuna: ''
 
   });
 
@@ -60,14 +63,14 @@ function CRUD() {
   }//peticionGet
 
   const peticionPost = async () => {
-    { console.log(frameworkSeleccionado.dosis_Administradas) };
+    { console.log(frameworkSeleccionado.dosisAdministradas) };
     const vacuna = {
       comunidad: frameworkSeleccionado.comunidad,
       pzifer: frameworkSeleccionado.pzifer,
       moderna: frameworkSeleccionado.moderna,
-      dosis_Administradas: frameworkSeleccionado.dosis_Administradas,
-      pauta_Completa: frameworkSeleccionado.pauta_Completa,
-      fecha_Ult_Vacuna: frameworkSeleccionado.fecha_Ult_Vacuna
+      dosisAdministradas: frameworkSeleccionado.dosisAdministradas,
+      pautaCompleta: frameworkSeleccionado.pautaCompleta,
+      fechaUltVacuna: frameworkSeleccionado.fechaUltVacuna
     };
 
     await axios.post(baseUrl + "insertar/", vacuna)
@@ -90,9 +93,9 @@ function CRUD() {
       comunidad: frameworkSeleccionado.comunidad,
       pzifer: frameworkSeleccionado.pzifer,
       moderna: frameworkSeleccionado.moderna,
-      dosis_Administradas: frameworkSeleccionado.dosis_Administradas,
-      pauta_Completa: frameworkSeleccionado.pauta_Completa,
-      fecha_Ult_Vacuna: frameworkSeleccionado.fecha_Ult_Vacuna
+      dosisAdministradas: frameworkSeleccionado.dosisAdministradas,
+      pautaCompleta: frameworkSeleccionado.pautaCompleta,
+      fechaUltVacuna: frameworkSeleccionado.fechaUltVacuna
     };
     await axios.put(baseUrl + "modificar/" + frameworkSeleccionado.id, vacuna)
       .then(response => {
@@ -142,11 +145,11 @@ function CRUD() {
   return (
     <div style={{ textAlign: 'center' }}>
       <br />
-      <button className="btn btn-success" onClick={() => abrirCerrarModalInsertar()}>Insertar</button>
+      <button className="btn btn-success" style={{fontSize: "24px"}}  onClick={() => abrirCerrarModalInsertar()}>Insertar</button>
       <br /><br />
-      <table className="table table-striped">
+      <table className="table table-striped container-xl">
         <thead>
-          <tr>
+          <tr className="bg-info text-white">
             <th>ID</th>
             <th>Comunidad</th>
             <th>Pzifer</th>
@@ -154,6 +157,7 @@ function CRUD() {
             <th>Dosis administradas</th>
             <th>Pautas completas</th>
             <th>Fecha de última vacunación</th>
+            <th>Opción</th>
           </tr>
         </thead>
         <tbody>
@@ -175,13 +179,13 @@ function CRUD() {
               <td>{framework.comunidad}</td>
               <td>{framework.pzifer}</td>
               <td>{framework.moderna}</td>
-              <td>{framework.dosis_Administradas}</td>
-              <td>{framework.pauta_Completa}</td>
-              <td>{framework.fecha_Ult_Vacuna}</td>
+              <td>{framework.dosisAdministradas}</td>
+              <td>{framework.pautaCompleta}</td>
+              <td>{framework.fechaUltVacuna}</td>
               {/*console.log(framework)*/}
-              <td>
-                <button className="btn btn-primary" onClick={() => seleccionarFramework(framework, "Editar")}>Editar</button>
-                <button className="btn btn-danger" onClick={() => seleccionarFramework(framework, "Eliminar")}>Eliminar</button>
+              <td className="custom">
+                <button className="btn btn-primary" onClick={() => seleccionarFramework(framework, "Editar")}><PencilFill/></button>
+                <button className="btn btn-danger" onClick={() => seleccionarFramework(framework, "Eliminar")}><TrashFill/></button>
               </td>
             </tr>
           ))}
@@ -211,15 +215,15 @@ function CRUD() {
             <br />
             <label>Dosis Administradas: </label>
             <br />
-            <input type="text" className="form-control" name="dosis_administradas" required onChange={handleChange} />
+            <input type="text" className="form-control" name="dosisAdministradas" required onChange={handleChange} />
             <br />
             <label>Pauta Completa: </label>
             <br />
-            <input type="text" className="form-control" name="pauta_completa" required onChange={handleChange} />
+            <input type="text" className="form-control" name="pautaCompleta" required onChange={handleChange} />
             <br />
             <label>Fecha Ult Vacuna: </label>
             <br />
-            <input type="text" className="form-control" name="fecha_ult_vacuna" required placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])/(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])/(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" title="Por favor, introduce una fecha válida [YYYY-MM-DD]" onChange={handleChange} />
+            <input type="text" className="form-control" name="fechaUltVacuna" required placeholder="YYYY-MM-DD" pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])/(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])/(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" title="Por favor, introduce una fecha válida [YYYY-MM-DD]" onChange={handleChange} />
           </div>
         </ModalBody>
         <ModalFooter>
@@ -252,19 +256,19 @@ function CRUD() {
             <Col>
               <FormGroup>
                 <Label>Dosis Administradas</Label>
-                <Input type="number" className="form-control" name="dosis_administradas" placeholder="Nº dosis administradas" required onChange={handleChange} />
+                <Input type="number" className="form-control" name="dosisAdministradas" placeholder="Nº dosis administradas" required onChange={handleChange} />
               </FormGroup>
             </Col>
             <Col>
               <FormGroup>
                 <Label>Pauta completa</Label>
-                <Input type="number" className="form-control" name="pauta_completa" placeholder="Nº personas con pauta completa" required onChange={handleChange} />
+                <Input type="number" className="form-control" name="pautaCompleta" placeholder="Nº personas con pauta completa" required onChange={handleChange} />
               </FormGroup>
             </Col>
             <Col>
               <FormGroup>
                 <Label>Fecha de la última vacuna</Label>
-                <Input type="text" className="form-control" name="fecha_ult_vacuna" placeholder="Fecha de la última vacunación" required onChange={handleChange} />
+                <Input type="text" className="form-control" name="fechaUltVacuna" placeholder="Fecha de la última vacunación" required onChange={handleChange} />
               </FormGroup>
             </Col>
           </ModalBody>
@@ -293,15 +297,15 @@ function CRUD() {
             <br />
             <label>Dosis Administradas: </label>
             <br />
-            <input type="text" className="form-control" name="dosis_administradas" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.dosis_Administradas} />
+            <input type="text" className="form-control" name="dosisAdministradas" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.dosisAdministradas} />
             <br />
             <label>Pauta Completa: </label>
             <br />
-            <input type="text" className="form-control" name="pauta_completa" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.pauta_Completa} />
+            <input type="text" className="form-control" name="pautaCompleta" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.pautaCompleta} />
             <br />
             <label>Fecha Ult Vacuna: </label>
             <br />
-            <input type="text" className="form-control" name="fecha_ult_vacuna" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.fecha_Ult_Vacuna} />
+            <input type="text" className="form-control" name="fechaUltVacuna" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.fechaUltVacuna} />
             <br />
 
           </div>

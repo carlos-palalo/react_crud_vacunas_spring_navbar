@@ -23,8 +23,8 @@ const Pricing = () => {
                 response.data.map(function (item, i) {
                     dosisTotales += item.pzifer;
                     dosisTotales += item.moderna;
-                    dosisAdministradas += item.dosis_Administradas;
-                    pautaCompleta += item.pauta_Completa;
+                    dosisAdministradas += item.dosisAdministradas;
+                    pautaCompleta += item.pautaCompleta;
                 });
 
                 porcRecibidas = parseFloat(dosisAdministradas * 100 / dosisTotales).toFixed(2);
@@ -54,18 +54,18 @@ const Pricing = () => {
             <h1 className="gradient-text">Datos Globales</h1>
             <div className="global">
                 <div className="bg-success rounded bg-custom-1 text-white align-middle">
-                    <p>Dosis entregadas en CC.AA</p>
+                    <p className="font-size-s-medium">Dosis entregadas en CC.AA</p>
                     <p className="font-weight-bold font-size-xx-large">{entregadas.toLocaleString("es-ES")}</p>
                 </div>
                 <div className="bg-success rounded bg-custom-2 text-white align-middle">
-                    <p>Dosis administradas</p>
+                    <p className="font-size-s-medium">Dosis administradas</p>
                     <p className="font-weight-bold font-size-large border-bottom border-light">{administradas.toLocaleString("es-ES")}</p>
-                    <p><b className="font-size-medium">{porcentaje_Entregadas.toLocaleString("es-ES")} %</b> dosis recibidas </p>
+                    <p className="font-size-s-medium"><b className="font-size-medium">{porcentaje_Entregadas.toLocaleString("es-ES")} %</b> dosis recibidas </p>
                 </div>
                 <div className="bg-success rounded bg-custom-1 text-white align-middle">
-                    <p>Nº Personas con pauta completa</p>
+                    <p className="font-size-s-medium">Nº Personas con pauta completa</p>
                     <p className="font-weight-bold font-size-large border-bottom border-light">{pauta.toLocaleString("es-ES")}</p>
-                    <p><b className="font-size-medium">{porcentaje_Pauta.toLocaleString("es-ES")} %</b> dosis administradas</p>
+                    <p className="font-size-s-medium"><b className="font-size-medium">{porcentaje_Pauta.toLocaleString("es-ES")} %</b> dosis administradas</p>
                 </div>
             </div>
         </div>
