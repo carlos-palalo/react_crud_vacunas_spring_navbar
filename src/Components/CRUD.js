@@ -9,7 +9,7 @@ import axios from 'axios';
 //libreria para mejorar los alert   https://sweetalert.js.org/guides/
 //npm install sweetalert --save
 import swal from 'sweetalert';
-import './CRUD.css';
+import '../assets/css/CRUD.css';
 
 function CRUD() {
   //direccion de la API

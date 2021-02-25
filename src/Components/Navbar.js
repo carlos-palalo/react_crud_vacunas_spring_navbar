@@ -5,7 +5,7 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
-import "./navbar.css";
+import "../assets/css/navbar.css";
 
 const NavBar = () => {
   return (

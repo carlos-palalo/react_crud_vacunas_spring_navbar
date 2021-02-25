@@ -2,7 +2,7 @@ import React from 'react';
 //para trabajar con imagenes
 //primero la tengo que importar de dnde esta
 import imagenes from '../assets/imagenes';
-import "./Home.css";
+import "../assets/css/Home.css";
 
 const inicio = () => {
     return (

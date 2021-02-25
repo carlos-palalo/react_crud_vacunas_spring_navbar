@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './DatosGlobales.css';
+import '../assets/css/DatosGlobales.css';
 
 const Pricing = () => {
     const baseUrl = "http://localhost:5000/vacunas/";
