@@ -8,6 +8,7 @@ import DatosGlobales from "./Components/DatosGlobales";
 import MoreDeets from "./Components/MoreDeets";
 import NavBar from "./Components/Navbar"
 import {
+  Redirect,
   BrowserRouter as Router,
   Switch,
   Route,

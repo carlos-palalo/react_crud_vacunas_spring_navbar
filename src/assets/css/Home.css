@@ -4,16 +4,19 @@
     justify-content: space-between;
     height: 92vh;
     align-items: center;
-    padding: 60px;
+    padding: 60px 0px;
 }
 
 .info {
     display: flex;
     flex-direction: column;
     text-align: left;
-    justify-content: space-evenly;
     height: 60%;
     padding-right: 10px;
+}
+
+.info>*{
+    margin: 20px 0px;
 }
 
 .info h1 {
@@ -30,20 +33,27 @@
     margin-bottom: 40px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
+    .fondo>img {
+        max-width: 500px !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
     .fondo {
         flex-direction: column;
     }
     .info{
-        width: 425px;
+        width: fit-content;
+        margin: 0 auto;
     }
     .fondo>img {
-        max-height: 300px;
+        max-height: 400px;
         width: auto;
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 1201px) {
     .fondo>img {
         width: 50%;
         object-fit: contain;
@@ -52,19 +62,26 @@
         height: 60%;
     }
     .info h2 {
-        font-size: 3.5vw !important;
+        font-size: 50px !important;
     }
     .info img {
         height: 5vw !important;
     }
     .info h1 {
-        font-size: 6vw !important;
+        font-size: 70px !important;
         color: black;
     }
 }
 
-@media screen and (min-width: 1400px) {
-    .info {
-        height: 100%;
+@media screen and (max-width: 1200px){
+    .fondo{
+        padding: 40px !important;
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .fondo{
+        width: 1140px;
+        margin: 0 auto;
     }
 }
